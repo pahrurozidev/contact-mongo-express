@@ -47,7 +47,7 @@ app
 
 // ! halaman home
 app
-    .get('/', (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/', (req, res) => {
         const mahasiswa = [{
             nama: 'Pahrurozi',
             email: 'pahrurozi17@gmail.com'
@@ -62,7 +62,7 @@ app
 
 // ! halaman about
 app
-    .get('/about', (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/about', (req, res) => {
         res.render('about', {
             title: 'About',
             layout: 'layouts/main-layouts'
@@ -71,7 +71,7 @@ app
 
 // ! halaman contact
 app
-    .get('/contact', async (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/contact', async (req, res) => {
         const contacts = await Contact.find();
         res.render('contact', {
             title: 'Contact',
@@ -81,7 +81,7 @@ app
         });
     })
     // > form tambah data contact
-    .get('/contact/add', (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/contact/add', (req, res) => {
         res.render('add-contact', {
             title: 'Tambah Data',
             layout: 'layouts/main-layouts'
@@ -135,7 +135,7 @@ app
     //         });
     //     }
     // })
-    .delete('/contact', (req, res) => {
+    .delete('https://contact-mongo-express.herokuapp.com/contact', (req, res) => {
         Contact.deleteOne({
                 _id: req.body.id
             })
@@ -145,7 +145,7 @@ app
             })
     })
     // > form edit data
-    .get('/contact/edit/:nama', async (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/contact/edit/:nama', async (req, res) => {
         const contact = await Contact.findOne({
             nama: req.params.nama
         });
@@ -156,7 +156,7 @@ app
         })
     })
     // > proses edit data contact
-    .put('/contact',
+    .put('https://contact-mongo-express.herokuapp.com/contact',
         [
             body('nama').custom(async (value, {
                 req
@@ -201,7 +201,7 @@ app
             }
         })
     // > detail
-    .get('/contact/:nama', async (req, res) => {
+    .get('https://contact-mongo-express.herokuapp.com/contact/:nama', async (req, res) => {
         const contact = await Contact.findOne({
             nama: req.params.nama
         });
