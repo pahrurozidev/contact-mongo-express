@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // ! membuat schema
-const Contact = mongoose.model('contact', {
+const Contact = mongoose.model('contacts', {
     nama: {
         type: String,
         required: true

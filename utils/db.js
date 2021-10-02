@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/db', {
+mongoose.connect('mongodb+srv://Pahrurozi:pahrurozi123@cluster0.kzufo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 });
 
-// ! menambah satu data
+// ! menambah satu dataq
+
 // const contact1 = new contact({
 //     nama: 'Pahrurozi',
 //     nohp: '085338043144',
@@ -15,4 +16,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/db', {
 
 // const save = contact1.save().then(contact => {
 //     console.log(contact);
-// });
+// });  
