@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://Pahrurozi:pahrurozi123@cluster0.kzufo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://Pahrurozi:pahrurozi123@cluster0-shard-00-00.kzufo.mongodb.net:27017,cluster0-shard-00-01.kzufo.mongodb.net:27017,cluster0-shard-00-02.kzufo.mongodb.net:27017/db?ssl=true&replicaSet=atlas-uq6wzi-shard-0&authSource=admin&retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-});
+})
+    .then(() => {
+    console.log('mongodb connected');
+    })
+    .catch((err) => {
+    console.log(err);
+})
 
 // ! menambah satu dataq
 
